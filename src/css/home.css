@@ -1,0 +1,69 @@
+
+.home {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    margin-top: 3rem;
+    font-size: 2rem;
+    height: auto;
+}
+
+
+.text-div {
+    margin: 2rem auto;
+    display: flex;
+  }
+  
+  .text-div .fa, .text {
+    margin: 1rem;
+  }
+
+  .btns {
+    margin: 0 auto;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+Button {
+  padding: .7rem;
+  background-color: #8282f0;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: .4rem;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+  margin: 0 4rem 0 4rem;
+} 
+
+
+@media(min-width: 500px) {
+  Button {
+    padding: 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media(min-width: 800px) {
+  Button {
+    margin-top: 3rem;
+    padding: 1.2rem;
+    font-size: 2rem;
+  }
+}
+
+@media(min-width: 1000px) {
+  .home {
+    font-size: 3.8rem;
+  }
+}
+
+
+
+
+  
