@@ -20,14 +20,14 @@ export default function SignIn(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axios.post('http://localhost:500/auth/login', user)
+        axios.post('https://dutyapi.herokuapp.com/auth/login', user)
              .then(res => {
                  console.log(res)
                  localStorage.setItem("token", res.data.payload);
                  props.history.push('/userhome')
             })
              .catch(err => console.log(err))
-                setUser({ email: '', password: '' })
+                setUser({ username: '', password: '' })
     };
 
 
@@ -41,13 +41,13 @@ export default function SignIn(props) {
                 
                 <Form className = "form" onSubmit={handleSubmit}>
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0 set">
-                        <Label for="email" className="mr-sm-2">Email</Label>
+                        <Label for="username" className="mr-sm-2">Username</Label>
                         <Input onChange={onInputChange}
-                        type="email" 
-                        name="email" 
-                        id="email" 
-                        placeholder="enter your email"
-                        value={user.email} />
+                        type="text" 
+                        name="username" 
+                        id="username" 
+                        placeholder="enter your username"
+                        value={user.username} />
                     </FormGroup>
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0 set">
                         <Label for="password" className="mr-sm-2">Password</Label>

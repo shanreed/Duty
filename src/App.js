@@ -30,6 +30,7 @@ function App() {
       <Route path = '/whichsignup' component = {WhichSignUp} />
       <Route path = '/signup' component = {SignUp} />
       <Route path = '/signin' component = {SignIn} />
+      
       <Footer />
     </div>
   );

@@ -1,39 +1,44 @@
 import React, { Component, useState } from 'react';
+import axios from "axios";
 import { Link } from 'react-router-dom';
 import { Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
 
 import '../css/signup.css';
 
 export default function SignUp(props) {
-
-    const [formData, setFormData] = useState({
+    const [newAssigner, setNewAssigner] = useState({
         username: '',
         email: '',
         password: '',
-        phone: ''
+        phoneNumber: ''
     });
     
-    const onSubmitHandler = e => {
+    const onSubmitHandler = (e, creds) => {
         
         e.preventDefault();
-        alert(`sending: UserName: ${formData.username}, Email: ${formData.email}, Password: ${formData.phone}`)
-
-    } 
+        axios.post("https://dutyapi.herokuapp.com/auth/register", creds)
+        .then(res => {
+            console.log(res);
+            props.history.push("/protected");
+        })
+        .catch(err => console.log(err));
+      }
 
     const onInputChange = e => {
 
-        setFormData({
-            ...formData,
+        setNewAssigner({
+            ...newAssigner,
             [e.target.name]: e.target.value,
         }); 
     };
     
          return (
             <div className = 'signup'>
-                <Form onSubmit = {onSubmitHandler}>
+                <Form onSubmit = {e => onSubmitHandler(e, newAssigner)}>
                 <FormGroup className = 'set'>
-                    <Label for="username">Username {formData.username || ''}</Label>
+                    <Label for="username">Username {newAssigner.username || ''}</Label>
                     <Input onChange = {onInputChange}
+                    value = {newAssigner.username}
                     type="username"
                     name="username"
                     id="username"
@@ -41,8 +46,9 @@ export default function SignUp(props) {
                     />
                 </FormGroup>
                 <FormGroup className = 'set'>
-                    <Label for="email">Email {formData.email || ''}</Label>
+                    <Label for="email">Email {newAssigner.email || ''}</Label>
                     <Input onChange = {onInputChange}
+                    value = {newAssigner.email}
                     type="email"
                     name="email"
                     id="email"
@@ -50,8 +56,9 @@ export default function SignUp(props) {
                     />
                 </FormGroup>
                 <FormGroup className = 'set'>
-                    <Label for="password">Password {formData.password || ''}</Label>
+                    <Label for="password">Password {newAssigner.password || ''}</Label>
                     <Input onChange = {onInputChange}
+                    value = {newAssigner.password}
                     type="password"
                     name="password"
                     id="password"
@@ -60,11 +67,12 @@ export default function SignUp(props) {
                 </FormGroup>
                 
                 <FormGroup className = 'set'>
-                    <Label for="phone">Phone Number {formData.phone || ''}</Label>
+                    <Label for="phonenumber">Phone Number {newAssigner.phonenumber || ''}</Label>
                     <Input onChange = {onInputChange}
-                    type="phone"
-                    name="phone"
-                    id="phone"
+                    value = {newAssigner.phonenumber}
+                    type="phonenumber"
+                    name="phonenumber"
+                    id="phonenumber"
                     placeholder="enter your phone number"
                     />
                 </FormGroup>
