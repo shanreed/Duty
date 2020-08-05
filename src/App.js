@@ -8,7 +8,8 @@ import Footer from './components/footer'
 import WhichSignUp from './components/whichSignUp';
 import WhichSignIn from './components/whichSignIn';
 import SignUp from './components/signup';
-import AssignersSignIn from './components/assignersSignin';
+import AssignerSignIn from './components/assignerSignin';
+import AssigneeSignIn from './components/assignerSignin';
 import AssignerHome from './components/assignerHome';
 import './App.css';
 
@@ -33,7 +34,8 @@ class App extends React.Component {
       <Route path = '/whichsignup' component = {WhichSignUp} />
       <Route path = '/whichsignin' component = {WhichSignIn} />
       <Route path = '/signup' component = {SignUp} />
-      <Route path = '/assignersSignin' component = {AssignersSignIn} />
+      <Route path = '/assignerSignin' component = {AssignerSignIn} />
+      <Route path = '/assigneeSignin' component = {AssigneeSignIn} />
       <Route path = '/protected' component = {AssignerHome} />
       
       <Footer />
