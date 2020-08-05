@@ -3,7 +3,6 @@ import { Route } from "react-router-dom";
 
 import homeimg from './assets/home.jpg';
 
-import Header from './components/header';
 import Home from './components/home';
 import Footer from './components/footer'
 import WhichSignUp from './components/whichSignUp';
