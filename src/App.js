@@ -9,9 +9,12 @@ import Footer from './components/footer'
 import WhichSignUp from './components/whichSignUp';
 import SignUp from './components/signup';
 import SignIn from './components/signin';
+import AssignerHome from './components/assignerHome';
 import './App.css';
 
-function App() {
+class App extends React.Component {
+
+  render() {
 
   return (
     <div className="App">
@@ -30,10 +33,12 @@ function App() {
       <Route path = '/whichsignup' component = {WhichSignUp} />
       <Route path = '/signup' component = {SignUp} />
       <Route path = '/signin' component = {SignIn} />
+      <Route path = '/protected' component = {AssignerHome} />
       
       <Footer />
     </div>
   );
+}
 }
 
 export default App;

@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import {axioswithAuth} from '../auth/axiosAuth';
+import { axiosWithAuth } from '../auth/axiosAuth';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -20,11 +20,11 @@ export default function SignIn(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axios.post('https://dutyapi.herokuapp.com/auth/login', user)
+        axiosWithAuth().post('/auth/login', user)
              .then(res => {
-                 console.log(res)
+                 console.log("Thiss is the login Response:", res)
                  localStorage.setItem("token", res.data.payload);
-                 props.history.push('/userhome')
+                 props.history.push('/protected')
             })
              .catch(err => console.log(err))
                 setUser({ username: '', password: '' })
