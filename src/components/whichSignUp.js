@@ -12,7 +12,7 @@ export default function WhichSignUp(props) {
                         Do you want to assign task to other users?
                     </p>
                     <div className = "which-btns">
-                    <Button onClick={() => props.history.push('/signup')} className = "btn" size="lg">
+                    <Button onClick={() => props.history.push('/assignerSignUp')} className = "btn" size="lg">
                         ASSIGNER
                     </Button>
                     </div>
@@ -22,7 +22,7 @@ export default function WhichSignUp(props) {
                     Do you want to accept tasks from other users?
                     </p>
                     <div className = "which-btns">
-                    <Button onClick={() => props.history.push('/signup')} className = "btn" size="lg">
+                    <Button onClick={() => props.history.push('/assigneeSignUp')} className = "btn" size="lg">
                     ASSIGNEE
                     </Button>
                     </div>
