@@ -40,7 +40,7 @@ export default function Home(props) {
                 SIGN UP
             </Button>
             
-            <Button onClick={() => props.history.push('/signin')} className = "btn" size="lg">
+            <Button onClick={() => props.history.push('/whichsignin')} className = "btn" size="lg">
                 SIGN IN
                 </Button>
             

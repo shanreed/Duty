@@ -6,8 +6,9 @@ import homeimg from './assets/home.jpg';
 import Home from './components/home';
 import Footer from './components/footer'
 import WhichSignUp from './components/whichSignUp';
+import WhichSignIn from './components/whichSignIn';
 import SignUp from './components/signup';
-import SignIn from './components/signin';
+import AssignersSignIn from './components/assignersSignin';
 import AssignerHome from './components/assignerHome';
 import './App.css';
 
@@ -30,8 +31,9 @@ class App extends React.Component {
       </div>
       <Route exact path = '/' component = {Home} />
       <Route path = '/whichsignup' component = {WhichSignUp} />
+      <Route path = '/whichsignin' component = {WhichSignIn} />
       <Route path = '/signup' component = {SignUp} />
-      <Route path = '/signin' component = {SignIn} />
+      <Route path = '/assignersSignin' component = {AssignersSignIn} />
       <Route path = '/protected' component = {AssignerHome} />
       
       <Footer />
