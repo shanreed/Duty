@@ -6,7 +6,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 import '../css/signin.css';
 
-export default function SignIn(props) {
+export default function AssignersSignIn(props) {
 
     const [user, setUser] = useState({ email: "", password: "" });
 

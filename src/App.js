@@ -3,12 +3,14 @@ import { Route } from "react-router-dom";
 
 import homeimg from './assets/home.jpg';
 
-import Header from './components/header';
 import Home from './components/home';
 import Footer from './components/footer'
 import WhichSignUp from './components/whichSignUp';
-import SignUp from './components/signup';
-import SignIn from './components/signin';
+import WhichSignIn from './components/whichSignIn';
+import AssignerSignUp from './components/assignerSignup';
+import AssigneeSignUp from './components/assigneeSignup';
+import AssignerSignIn from './components/assignerSignin';
+import AssigneeSignIn from './components/assignerSignin';
 import AssignerHome from './components/assignerHome';
 import './App.css';
 
@@ -31,8 +33,11 @@ class App extends React.Component {
       </div>
       <Route exact path = '/' component = {Home} />
       <Route path = '/whichsignup' component = {WhichSignUp} />
-      <Route path = '/signup' component = {SignUp} />
-      <Route path = '/signin' component = {SignIn} />
+      <Route path = '/whichsignin' component = {WhichSignIn} />
+      <Route path = '/assignerSignUp' component = {AssignerSignUp} />
+      <Route path = '/assigneeSignUp' component = {AssigneeSignUp} />
+      <Route path = '/assignerSignin' component = {AssignerSignIn} />
+      <Route path = '/assigneeSignin' component = {AssigneeSignIn} />
       <Route path = '/protected' component = {AssignerHome} />
       
       <Footer />
